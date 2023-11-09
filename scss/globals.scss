@@ -1,0 +1,350 @@
+@import "./variables";
+@import "./fonts";
+@import "./functions";
+
+html {
+  font-size: 12px;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media screen and (min-width: 350px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  background: $bg-color;
+  color: $text-color;
+
+  font-family: "Poppins", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+}
+
+img {
+  height: 100%;
+  width: auto;
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+  font-family: "Poppins";
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Poppins";
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* _____Header styles_____ */
+
+#header {
+  position: relative;
+  background: $main-color;
+  padding: 2rem 6rem;
+  padding-bottom: 7rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & img {
+    height: 150px;
+  }
+}
+
+.header-text {
+  font-family: "Poppins";
+  font-weight: 700;
+  color: $white-color;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.header-content {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.header-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+
+  & svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 70px;
+  }
+
+  & .shape-fill {
+    fill: $bg-color;
+  }
+}
+
+/* _____*****_____ */
+
+#search {
+  padding: 1rem 2rem;
+  padding-bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 35px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 60px;
+
+  width: 100%;
+
+  & input {
+    font-size: 1rem;
+    width: 100%;
+
+    border-radius: 50px;
+    padding: 0.875rem 3.5rem;
+
+    background-color: white;
+    background-image: url("/assets/svgs/search.svg");
+    background-position: 1.25rem 1rem;
+    background-size: 1.25rem;
+    background-repeat: no-repeat;
+
+    box-shadow: $box-shadow-basic;
+
+    &::placeholder {
+      color: $text-color;
+    }
+  }
+
+  & button {
+    display: none;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    background: $main-color;
+    color: $white-color;
+
+    border-radius: 50px;
+    padding: 0.875rem 3rem;
+
+    box-shadow: $box-shadow-basic;
+  }
+}
+
+/* _____*****_____ */
+
+#categories {
+  padding: 0 2rem;
+  margin-bottom: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 35px;
+
+  & h2 {
+    font-weight: 600;
+  }
+}
+
+.categories-wrapper {
+  width: 100%;
+  align-self: center;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.category {
+  height: 170px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 2rem 1.5rem;
+  border-radius: 50px;
+
+  box-shadow: $box-shadow-category;
+
+  & img {
+    width: 80%;
+  }
+}
+
+.category.animator {
+  background: $animator-color;
+  color: lightOrBlack($animator-color);
+}
+
+.category.writer {
+  background: $writer-color;
+  color: lightOrBlack($writer-color);
+}
+
+.category.uiux {
+  background: $uiux-color;
+  color: lightOrBlack($uiux-color);
+}
+
+.category.developer {
+  background: $developer-color;
+  color: lightOrBlack($developer-color);
+}
+
+.category.marketing {
+  background: $marketing-color;
+  color: lightOrBlack($marketing-color);
+}
+
+.category.ngdx {
+  background: $ngdx-color;
+  color: lightOrBlack($ngdx-color);
+}
+
+/* _____*****_____ */
+
+#howitworks {
+  padding: 1rem 2rem;
+  padding-bottom: 0;
+  margin-bottom: 60px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+
+  & h1 {
+    font-size: 2rem;
+  }
+
+  & img {
+    width: 15rem;
+  }
+
+  & p {
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+}
+
+/* _____*****_____ */
+
+#footer {
+  padding: 4rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+
+  background: $main-color;
+  color: $white-color;
+}
+
+.footer {
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+    font-weight: 500;
+  }
+
+  &-copyright {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+}
+
+/* _____*****_____ */
+
+@media only screen and (min-width: 600px) {
+  .header {
+    &-text {
+      text-align: left;
+    }
+
+    &-content {
+      justify-content: space-between;
+    }
+  }
+
+  #search,
+  #howitworks,
+  #categories
+  {
+    padding: 2rem 6rem;
+    padding-bottom: 0px;
+  }
+
+  #footer {
+    padding: 4rem 6rem;
+  }
+  #search,
+  #categories {
+    align-items: flex-start;
+  }
+
+  #search {
+    & button {
+      display: block;
+    }
+  }
+}
